@@ -5,3 +5,48 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts 'Cleaning database...'
+Restaurant.destroy_all
+
+puts 'Creating restaurants...'
+categories = ["chinese", "italian", "japanese", "french", "belgian"]
+restaurants_attributes = [
+  {
+    name: Faker::StarWars.character,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.phone_number,
+    category: categories.sample
+  },
+
+  {
+    name: Faker::StarWars.character,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.phone_number,
+    category: categories.sample
+  },
+
+  {
+    name: Faker::StarWars.character,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.phone_number,
+    category: categories.sample
+  },
+
+  {
+    name: Faker::StarWars.character,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.phone_number,
+    category: categories.sample
+  },
+
+  {
+    name: Faker::StarWars.character,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.phone_number,
+    category: categories.sample
+  }
+]
+
+Restaurant.create!(restaurants_attributes)
+puts 'Finished!'
